@@ -2,12 +2,18 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../../node_modules/font-awesome/css/font-awesome.css';
 
 import React from 'react';
-import Todo from '../todo/todo';
-import About from '../about/about';
+import { BrowserRouter } from 'react-router-dom'
 
-export default props => (
-  <div className="container">
-    <Todo />
-    <About />
-  </div>
+import Routes from './routes';
+import Menu from '../template/menu';
+
+const App = () => (
+  <BrowserRouter>
+    <div className="container">
+      <Menu />
+      <Routes />
+    </div>
+  </BrowserRouter>
 );
+
+export default App;
