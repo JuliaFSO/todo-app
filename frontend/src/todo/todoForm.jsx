@@ -7,6 +7,7 @@ const TodoForm = props => (
     <Grid cols='12 9 10'>
       <input id='description' className='form-control'
       placeholder='Add a task'
+      onChange={props.handleChange}
       value={props.description} />
     </Grid>
     <Grid cols='12 3 2'>
