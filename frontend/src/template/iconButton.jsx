@@ -1,10 +1,11 @@
-import React from "react";
-import iconButton from "./iconButton";
-import If from "./if";
+import React from 'react';
+import If from './if';
 
 const iconButton = props => (
   <If test={!props.hide}>
-    <iconButton style="primary" icon="plus" />
+    <button className={'btn btn-' + props.style} onClick={props.onClick}>
+      <i className={'fa fa-' + props.icon}></i>
+    </button>
   </If>
 );
 
