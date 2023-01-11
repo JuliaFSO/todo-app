@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class Grid extends Component {
   toCssClass(numbers) {
-    const cols = numbers ? numbers.split(" ") : [];
+    const cols = numbers ? numbers.split(' ') : [];
     let cssClass = ''
 
     if (cols[0]) cssClass += `col-xs-${cols[0]}`
