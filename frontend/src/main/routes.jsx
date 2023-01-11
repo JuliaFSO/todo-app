@@ -1,19 +1,16 @@
 import React from "react";
-import { Redirect } from 'react-router'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import Todo from "../todo/todo";
 import About from "../about/about";
 
 const Routes = () => (
   <BrowserRouter>
-    <div>
-      <Switch>
-        <Route path="./todos" class={<Todo />} />
-        <Route path="./about" function={<About />} />
-      </Switch>
+    <Switch>
+      <Route path="/todos" component={Todo} />
+      <Route path="/about" component={About} />
       <Redirect from="*" to="/todos" />
-    </div>
+    </Switch>
   </BrowserRouter>
 )
 
