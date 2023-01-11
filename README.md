@@ -1,2 +1,2 @@
-# todo-app
- ToDo App
+# ToDo App
+ Curso React + Redux
