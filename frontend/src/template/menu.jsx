@@ -11,8 +11,8 @@ const Menu = props => (
       </div>
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav">
-          <li><Link to="todos">Tarefas</Link></li>
-          <li><Link to="about">Sobre</Link></li>
+          <li><Link to="todos">Tasks</Link></li>
+          <li><Link to="about">About</Link></li>
         </ul>
       </div>
     </div>
