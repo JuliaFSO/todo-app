@@ -8,7 +8,7 @@ import Routes from './routes';
 
 const App = () => (
   <BrowserRouter>
-    <div className="container">
+    <div className='container'>
       <Routes />
     </div>
   </BrowserRouter>
