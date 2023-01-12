@@ -6,7 +6,7 @@ const Menu = props => (
     <div className='container'>
       <div className='navbar-header'>
         <a className='navbar-brand' href='/'>
-          <i className='fa fa-calendar-check-o'></i> TodoApp
+          <i className='fa fa-calendar-check-o'></i> ToDo-App
         </a>
       </div>
       <div id='navbar' className='navbar-collapse collapse'>
