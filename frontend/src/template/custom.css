@@ -7,6 +7,10 @@
   color: #777;
 }
 
-.tdActions {
-  text-align: center;
+.todoActions {
+  width: 150px;
+}
+
+.todoForm {
+  margin-bottom: 120px;
 }
