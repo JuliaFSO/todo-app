@@ -15,6 +15,7 @@ export default class Todo extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleClear = this.handleClear.bind(this);
 
     this.handleRemove = this.handleRemove.bind(this);
     this.handleMarkAsDone = this.handleMarkAsDone.bind(this);
@@ -70,14 +71,24 @@ export default class Todo extends Component {
     });
   }
 
+  handleClear(e) {
+    if (this.state.editingTodo) {
+      this.setState({ editingTodo: { ...this.state.editingTodo, description: e.target.value } });
+      this.refresh();
+    } else {
+      this.refresh();
+    }
+  }
+
   render() {
     return (
       <div>
-        <PageHeader name='Tasks' small='Form' />
+        <PageHeader name='Tasks' />
         <TodoForm description={this.state.editingTodo ? this.state.editingTodo.description : this.state.description}
-        handleChange={this.handleChange}
-        handleAdd={this.handleAdd}
-        handleSearch={this.handleSearch} />
+            handleChange={this.handleChange}
+            handleAdd={this.handleAdd}
+            handleSearch={this.handleSearch}
+            handleClear={this.handleClear} />
         <TodoList list={this.state.list}
             description={this.state.description}
             handleMarkAsDone={this.handleMarkAsDone}
