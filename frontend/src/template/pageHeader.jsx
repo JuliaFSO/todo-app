@@ -1,10 +1,8 @@
 import React from 'react';
 
 const PageHeader = props => (
-  <header className='page-header'>
-    <h2>
-      {props.name} <small>{props.small}</small>
-    </h2>
+  <header className='pageHeader'>
+    <i className='fa fa-calendar-check-o'></i>{props.name} <small>{props.small}</small>
   </header>
 );
 
