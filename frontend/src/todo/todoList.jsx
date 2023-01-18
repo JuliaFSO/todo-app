@@ -19,11 +19,11 @@ const todoList = props => {
 
   return (
       <div>
-        <table className='table'>
+        <table className='table tableList'>
           <thead>
             <tr>
-              <th className=''>Description</th>
-              <th className='todoActions'>Actions</th>
+              <th className=''><h3>Tasks descriptions</h3></th>
+              <th className='todoActions'><h3>Actions</h3></th>
             </tr>
           </thead>
           <tbody>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Menu = props => (
   <nav className='navbar navbar-inverse bg-inverse'>
-    <div className='container'>
+    <div className='container  menu'>
       <div className='navbar-header'>
         <a className='navbar-brand' href='/'>
           <i className='fa fa-calendar-check-o'></i> ToDo-App

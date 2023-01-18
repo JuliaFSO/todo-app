@@ -5,9 +5,9 @@ const Home = props => (
     <div className='pageHeader'>
         <i className='fa fa-calendar-check-o'></i> ToDo-App
     </div>
-    <div className='container'>
-      <h1>Get it all done with this app!!</h1>
-        <h3>Streamline your daily to-dos and reach your responsibilities with ease using our app.</h3>
+    <div className='content'>
+      <h1>Get it all done with this app!</h1>
+        <h3>Streamline your daily to-dos and reach your responsibilities with ease.</h3>
     </div>
   </div>
 );
