@@ -84,16 +84,18 @@ export default class Todo extends Component {
     return (
       <div>
         <PageHeader name='Tasks' />
-        <TodoForm description={this.state.editingTodo ? this.state.editingTodo.description : this.state.description}
-            handleChange={this.handleChange}
-            handleAdd={this.handleAdd}
-            handleSearch={this.handleSearch}
-            handleClear={this.handleClear} />
-        <TodoList list={this.state.list}
-            description={this.state.description}
-            handleMarkAsDone={this.handleMarkAsDone}
-            handleEdit={this.handleEdit}
-            handleRemove={this.handleRemove} />
+        <div  className='content'>
+          <TodoForm description={this.state.editingTodo ? this.state.editingTodo.description : this.state.description}
+              handleChange={this.handleChange}
+              handleAdd={this.handleAdd}
+              handleSearch={this.handleSearch}
+              handleClear={this.handleClear} />
+          <TodoList list={this.state.list}
+              description={this.state.description}
+              handleMarkAsDone={this.handleMarkAsDone}
+              handleEdit={this.handleEdit}
+              handleRemove={this.handleRemove} />
+        </div>
       </div>
     );
   }
