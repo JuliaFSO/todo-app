@@ -1,0 +1,60 @@
+.body {
+  background-color: #f5f5f5;
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+.menu {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.btn {
+  margin-right: 5px;
+}
+
+.markAsDone {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.todoActions {
+  width: 150px;
+}
+
+.todoForm {
+  margin-top: 20px;
+  margin-bottom: 90px;
+}
+
+.tableList {
+  font-weight: bold;
+  font-family:  Verdana, Helvetica, Arial, sans-serif;
+}
+
+.pageHeader {
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding-left: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/5717411/pexels-photo-5717411.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-items: left;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.content {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
