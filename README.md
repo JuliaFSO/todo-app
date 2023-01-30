@@ -4,6 +4,7 @@
 
 ## Tools used:
 - ReactJS
+- Redux
 - Axios
 - Bootstrap
 - Font-awesome
