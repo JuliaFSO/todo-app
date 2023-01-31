@@ -15,10 +15,13 @@ export const search = () => {
   }
 }
 
-export const add = (description) => ({
+export const add = (description) => {
+  const request = axios.post(URL, { description })
+  return {
   type: 'TODO_ADDED',
-  payload: description,
-})
+  payload: request,
+  }
+}
 
 export const clear = () => ({
   type: 'TODO_CLEAR',
@@ -34,7 +37,10 @@ export const remove = (todo) => ({
   payload: todo,
 })
 
-export const edit = (todo) => ({
-  type: 'TODO_EDITED',
-  payload: todo,
-})
+export const edit = (todo) => {
+  const request = axios.put(`${URL}/${todo._id}`, { description: todo.description })
+  return {
+    type: 'TODO_EDITED',
+    payload: (request, { description: todo.description })
+  }
+}
