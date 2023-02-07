@@ -16,20 +16,10 @@ export const search = () => {
   }
 }
 
-export const add = (description, todo, editingTodo) => {
-  if (editingTodo) {
-    return (dispatch, getState) => {
-      const description = getState().todo.description;
-      axios.put(`${URL}/${todo._id}`, { ...todo, description })
-        .then(resp => dispatch(clear()))
-        .then(resp => dispatch(search()))
-    }
-  } else {
-    return dispatch => {
+export const add = (description) => {
+  return dispatch => {
       axios.post(URL, { description })
-        .then(resp => dispatch(clear()))
-        .then(resp => dispatch(search()))
-    }
+          .then(resp => dispatch(clear()))
   }
 }
 
@@ -56,5 +46,14 @@ export const edit = (todo) => {
   return dispatch => {
     axios.put(`${URL}/${todo._id}`, { ...todo, description: todo.description })
       .then(resp => dispatch({ type: 'TODO_EDITED', payload: { todo, description: todo.description } }))
+      .then(resp => dispatch(update(todo)))
   }
+}
+
+export const update = (todo) => {
+  return (dispatch, getState) => {
+    const description = getState().todo.description;
+    axios.put(`${URL}/${todo._id}`, { ...todo, description: description })
+      .then(resp => dispatch({ type: 'TODO_UPDATED', payload: resp.data }))
+      .then(resp => dispatch(search()))    }
 }
