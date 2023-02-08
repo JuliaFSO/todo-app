@@ -16,12 +16,17 @@ export const search = () => {
   }
 }
 
-export const add = (description) => {
-  return dispatch => {
+export const add = (todo, description) => {
+  return (dispatch) => {
+    if (todo._id) {
+      axios.put(`${URL}/${todo._id}`, {...todo, description })
+        .then(resp => dispatch({ type: 'TODO_UPDATED', payload: resp.data }))
+    } else {
       axios.post(URL, { description })
-          .then(resp => dispatch(clear()))
-  }
-}
+        .then(resp => dispatch(clear()))
+    }
+  };
+};
 
 export const clear = () => {
   return [{type: 'TODO_CLEAR'}, search()]
@@ -42,18 +47,17 @@ export const remove = (todo) => {
   }
 }
 
-export const edit = (todo) => {
+export const edit = (todo, description) => {
   return dispatch => {
-    axios.put(`${URL}/${todo._id}`, { ...todo, description: todo.description })
-      .then(resp => dispatch({ type: 'TODO_EDITED', payload: { todo, description: todo.description } }))
-      .then(resp => dispatch(update(todo)))
+    axios.put(`${URL}/${todo._id}`, { ...todo, description })
+      .then(resp => dispatch({ type: 'TODO_EDITED', payload: resp.data }))
   }
 }
 
-export const update = (todo) => {
-  return (dispatch, getState) => {
-    const description = getState().todo.description;
-    axios.put(`${URL}/${todo._id}`, { ...todo, description: description })
-      .then(resp => dispatch({ type: 'TODO_UPDATED', payload: resp.data }))
-      .then(resp => dispatch(search()))    }
+export const update = (todo, description) => {
+  return dispatch => {
+    axios.put(`${URL}/${todo._id}`, {...todo, description })
+      .then(resp => dispatch({ type: 'TODO_UPDATE', payload: resp.data }))
+      .then(resp => dispatch(clear()))
+  }
 }

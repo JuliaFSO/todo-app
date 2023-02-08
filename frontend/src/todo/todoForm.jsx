@@ -27,7 +27,7 @@ class TodoForm extends Component {
   }
 
   render() {
-    const { add, search, description, clear, edit, update } = this.props;
+    const { add, search, description, clear, update } = this.props;
     const editingTodo = this.props.editingTodo;
 
     return (
@@ -41,7 +41,7 @@ class TodoForm extends Component {
           />
         </Grid>
         <Grid cols='12 3 2'>
-          <IconButton style='primary' icon='plus' onClick={() => (editingTodo ? update(description) : add(description))} />
+          <IconButton style='primary' icon='plus' onClick={() => (editingTodo ? update(editingTodo, description) : add(description))} />
           <IconButton style='info' icon='search' onClick={search} />
           <IconButton style='default' icon='close' onClick={() => clear(description)} />
         </Grid>
@@ -50,7 +50,7 @@ class TodoForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({ description: state.todo.description, editingToDo: state.todo.editingToDo });
+const mapStateToProps = state => ({ description: state.todo.description, editingTodo: state.todo.editingTodo });
 const mapDispatchToProps = dispatch =>
       bindActionCreators({ changeDescription, search, add, clear, edit, update }, dispatch);
 

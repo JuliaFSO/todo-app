@@ -7,11 +7,6 @@ const todoReducer = (state = INITIAL_STATE, action) => {
     case 'TODO_SEARCHED':
       return { ...state, list: action.payload };
     case 'TODO_ADDED':
-      if ('TODO_EDITED' === action.type) {
-        return { ...state, description: action.payload.description, editingTodo: action.payload };
-      } else {
-        return { ...state, description: '' };
-      }
     case 'TODO_CLEAR':
       return { ...state, description: '' };
     case 'TODO_MARKED_AS_DONE':
