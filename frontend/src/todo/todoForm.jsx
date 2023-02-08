@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import Grid from '../template/grid';
 import IconButton from '../template/iconButton';
 
-import { changeDescription, search, add, clear } from './todoActions';
+import { changeDescription, search, add, clear, edit, update } from './todoActions';
 
 class TodoForm extends Component {
   constructor(props) {
@@ -25,10 +25,10 @@ class TodoForm extends Component {
       clear();
     }
   }
+
   render() {
-    const { add, search, description, clear } = this.props;
-    const isEditing = this.props.editingTodo !== null;
-    let editingTodo = this.props.editingTodo;
+    const { add, search, description, clear, update } = this.props;
+    const editingTodo = this.props.editingTodo;
 
     return (
       <div role='form' className='todoForm'>
@@ -37,10 +37,11 @@ class TodoForm extends Component {
           placeholder='Add a task'
           onChange={this.props.changeDescription}
           onKeyUp={this.keyHandler}
-          value={ isEditing ? editingTodo.description : this.props.description } />
+          value={ description }
+          />
         </Grid>
         <Grid cols='12 3 2'>
-          <IconButton style='primary' icon='plus' onClick={() => add(description, editingTodo, isEditing)} />
+          <IconButton style='primary' icon='plus' onClick={() => (editingTodo ? update(editingTodo, description) : add(description))} />
           <IconButton style='info' icon='search' onClick={search} />
           <IconButton style='default' icon='close' onClick={() => clear(description)} />
         </Grid>
@@ -49,8 +50,8 @@ class TodoForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({ description: state.todo.description, editingToDo: state.todo.editingToDo });
+const mapStateToProps = state => ({ description: state.todo.description, editingTodo: state.todo.editingTodo });
 const mapDispatchToProps = dispatch =>
-      bindActionCreators({ changeDescription, search, add, clear }, dispatch);
+      bindActionCreators({ changeDescription, search, add, clear, edit, update }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoForm);

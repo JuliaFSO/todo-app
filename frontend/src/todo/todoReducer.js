@@ -1,4 +1,4 @@
-const INITIAL_STATE = { description: '', list: [] }
+const INITIAL_STATE = { description: '', list: [], editingTodo: undefined };
 
 const todoReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -14,11 +14,12 @@ const todoReducer = (state = INITIAL_STATE, action) => {
     case 'TODO_REMOVED':
       return { ...state, list: state.list.filter(todo => todo._id !== action.payload._id) };
     case 'TODO_EDITED':
-      return { ...state, description: action.payload.description,
-              list: state.list.map(todo => todo._id === action.payload._id ? { ...todo, description: action.payload.description } : todo) };
+      return { ...state, description: action.payload.description, editingTodo: action.payload };
+    case 'TODO_UPDATED':
+      return { ...state, description: action.payload.description, editingTodo: undefined };
     default:
       return state;
   }
-}
+};
 
 export default todoReducer;
