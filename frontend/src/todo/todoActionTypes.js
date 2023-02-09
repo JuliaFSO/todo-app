@@ -1,0 +1,8 @@
+export const DESCRIPTION_CHANGED = 'DESCRIPTION_CHANGED';
+export const TODO_SEARCHED = 'TODO_SEARCHED';
+export const TODO_ADDED = 'TODO_ADDED';
+export const TODO_CLEAR = 'TODO_CLEAR';
+export const TODO_MARKED_AS_DONE = 'TODO_MARKED_AS_DONE';
+export const TODO_EDITED = 'TODO_EDITED';
+export const TODO_UPDATED = 'TODO_UPDATED';
+export const TODO_REMOVED = 'TODO_REMOVED';
