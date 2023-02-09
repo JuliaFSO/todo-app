@@ -24,7 +24,7 @@ class TodoForm extends Component {
       if (e.shiftKey) {
         search();
       } else {
-        if (update) {
+        if (editingTodo) {
           update(editingTodo, description);
         } else {
           add(description);
