@@ -18,8 +18,12 @@ export const search = () => {
 
 export const add = (description) => {
   return (dispatch) => {
+    if (description === '') {
+      return null;
+    }
       axios.post(URL, { description })
         .then(resp => dispatch(clear()))
+        dispatch({ type: 'SHOW_ERROR', payload: 'Please enter a description a new task' });
     }
   };
 

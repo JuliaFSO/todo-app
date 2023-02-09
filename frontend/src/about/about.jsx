@@ -11,7 +11,7 @@ import PageHeader from '../template/pageHeader';
           With a user-friendly interface and a variety of features, this app makes it easy for you to create, manage,
           and track your to-do list. Whether you're a busy professional, a student, or simply someone looking to stay
           organized, this app has something for you.</p>
-          <p><strong>ToDo-App Version 1.0 - React with no redux</strong></p>
+          <p><strong>ToDo-App Version 2.0 - React with Redux</strong></p>
         </div>
         <div class="col">
           <h2>About me</h2>
