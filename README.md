@@ -1,4 +1,4 @@
-# ToDo App
+# :ballot_box_with_check: ToDo App 
 
 ## React + Redux Course learning project
 
