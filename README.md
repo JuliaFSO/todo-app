@@ -6,8 +6,6 @@
 - ReactJS
 - Redux
 - Axios
-- Bootstrap
-- Font-awesome
 - React-dom
 - React-router
 
